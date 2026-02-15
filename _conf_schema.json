@@ -1,0 +1,54 @@
+{
+    "enable": {
+        "description": "启用数字混淆",
+        "type": "bool",
+        "hint": "总开关。启用后会自动将发送给AI的文本中1~17的数字替换为算术表达式",
+        "default": true
+    },
+    "process_system_prompt": {
+        "description": "处理系统提示词",
+        "type": "bool",
+        "hint": "是否同时处理系统提示词中的数字。一般不需要开启",
+        "default": false
+    },
+    "inject_hint": {
+        "description": "注入解读提示",
+        "type": "bool",
+        "hint": "在系统提示词末尾注入提示，帮助AI正确理解算术表达式代表的数值",
+        "default": true
+    },
+    "min_number": {
+        "description": "混淆范围下限",
+        "type": "int",
+        "hint": "需要混淆的最小数字（含此数字）",
+        "default": 1,
+        "slider": {
+            "min": 0,
+            "max": 17,
+            "step": 1
+        }
+    },
+    "max_number": {
+        "description": "混淆范围上限",
+        "type": "int",
+        "hint": "需要混淆的最大数字（含此数字）",
+        "default": 17,
+        "slider": {
+            "min": 1,
+            "max": 30,
+            "step": 1
+        }
+    },
+    "strategy": {
+        "description": "替换策略",
+        "type": "string",
+        "hint": "random=每次随机选一种, difference=差值法(a-b), modulo=取模法(a%b), floordiv=整除法(a//b)",
+        "default": "random",
+        "options": [
+            "random",
+            "difference",
+            "modulo",
+            "floordiv"
+        ]
+    }
+}

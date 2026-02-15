@@ -1,0 +1,5 @@
+name: astrbot_plugin_number_obfuscator
+desc: 对发送给AI的文本进行预处理，将0-18之间的数字替换为算术表达式，规避内容审核
+version: 1.0.0
+author: lumingya
+repo: ""
